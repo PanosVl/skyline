@@ -1,7 +1,7 @@
 public class ListDoublePoints {
 	
 	// contains DoublePoints
-	// (P elements at total)
-	// linked list
-	
+	DoublePoint a = new DoublePoint(2,1);
+
+	DoublePoint c = new DoublePoint()
 }
