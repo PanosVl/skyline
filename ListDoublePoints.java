@@ -19,13 +19,19 @@ public class ListDoublePoints {
 		return (first == null);
 	}
 
-	
+	// εισάγει στοιχεία DoublePoint στην αρχή της λίστας
+	public void insertFirst(double x, double y) {
 
+		// δημιουργία του σημείου και της σύνδεσής του
+		// στη λίστα
+		DoublePoint newPoint = new DoublePoint(x,y);
 
+		// το newPoint θα δείχνει εκεί που έδειχνε το 
+		// προηγούμενο σημείο (το παλιό πρώτο)
+		newPoint.next = first;
 
-	// contains DoublePoints
-	DoublePoint a = new DoublePoint(1, 9);
-	DoublePoint b = new DoublePoint(2,10);
-	DoublePoint c = new DoublePoint(4,8);
-	DoublePoint d = new DoublePoint(9,2);
+		// το first θα δείχνει το newPoint
+		// (κάνω το newPoint το πρώτο στοιχείο της λίστας)
+		first = newPoint;
+	}
 }
