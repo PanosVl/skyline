@@ -34,4 +34,21 @@ public class ListDoublePoints {
 		// (κάνω το newPoint το πρώτο στοιχείο της λίστας)
 		first = newPoint;
 	}
+
+	// εμφανίζει τη λίστα
+	public void displayList() {
+
+		System.out.print("List (first-->last): ");
+
+		// ξεκίνα απο την αρχή της λίστας
+		DoublePoint current = first;
+
+		// μέχρι το τέλος της
+		while (current != null)
+		{
+			current.displayDoublePoint(); // τύπωσε το στοιχείο 
+			current = current.next;		  // βάλε τον current να δείχνει μια θέση μπροστά
+		}
+		System.out.println("");
+	}
 }
