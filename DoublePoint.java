@@ -17,7 +17,6 @@ public class DoublePoint {
 		// η 'next' αρχικοποιείται αυτόματα με την τιμή null
 	}
 
-	// ---------ΠΡΟΑΙΡΕΤΙΚΟ ΠΡΟΣ ΤΟ ΠΑΡΟΝ--------
 	// μέθοδος για την εφμάνιση του κόμβου λίστας
 	public void displayDoublePoint() {
 		System.out.print("{" + x + ", " + y + "} ");
