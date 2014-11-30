@@ -35,6 +35,37 @@ public class ListDoublePoints {
 		first = newPoint;
 	}
 
+	// διαγράφει το στοιχείο με συντεταγμένες (a, b) απο τη λίστα
+	public DoublePoint delete(double a, double b) {
+		
+		DoublePoint current = first;
+		DoublePoint previous = first;
+
+		while (current.x != a) 
+		{
+			if (current.next == null)
+				// έφτασε στο τέλος της λίστας 
+				// χωρίς να βρεί το στοιχείο με (a, κάτι)
+				return null;
+			else
+			{
+				// προχώρα στο επόμενο στοιχείο
+				previous = current;
+				current = current.next;
+			}
+		}
+		// βρέθηκε
+		if (current == first)
+			// αν είναι το πρώτο στοιχείο, άλλαξέ το
+			first = first.next;
+		else
+			// αλλιώς προσπέρασέ το
+			previous.next = current.next;
+
+		return current;
+	}
+
+
 	// εμφανίζει τη λίστα
 	public void displayList() {
 
