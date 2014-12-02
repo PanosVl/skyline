@@ -1,6 +1,10 @@
 public class SkylineAlg1 {
 
-	public ListDoublePoints list;
+	public ListDoublePoints list = new ListDoublePoints();
+
+	public void test() {
+		System.out.println("ok");
+	}
 
 	public SkylineAlg1 (ListDoublePoints inputList) {
 		list = inputList;
