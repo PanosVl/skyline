@@ -2,18 +2,11 @@ public class SkylineAlg1 {
 
 	// κλάσση για τον πρώτο αλγόριθμο skyline
 
-	// δημιουργία νέου αντικειμένου ListDoublePoint
-	public ListDoublePoints list = new ListDoublePoints();
-
-	
-	// constructor
-	public SkylineAlg1 (ListDoublePoints inputList) {
-		list = inputList;
-	}
 
 
 	// επιστρέφει το Skyline για τη δεδομένη λίστα
-	public ListDoublePoints getSkyline() {
+	public ListDoublePoints getSkyline( ListDoublePoints list) {
+
 		DoublePoint  previous = list.first; // αρχή της λίστας
 		// DoublePoint previous = first; 
 		DoublePoint  current = previous.next; // το δεύτερο στοιχείο της λίστας

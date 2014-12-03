@@ -13,8 +13,8 @@ public class DoublePoint {
 
 	// constructor
 	public DoublePoint ( double a, double b ) {
-		a = x;
-		b = y;
+		x = a;
+		y = b;
 		// η 'next' αρχικοποιείται αυτόματα με την τιμή null
 	}
 

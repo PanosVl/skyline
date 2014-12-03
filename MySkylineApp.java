@@ -17,10 +17,12 @@ public class MySkylineApp {
 		
 		list1.insertFirst(9,2);
 
+		list1.insertFirst(10,10);
+
 		list1.displayList();
 		
-		SkylineAlg1 test = new SkylineAlg1(list1);
-		//list1 = getSkyline();
+		SkylineAlg1 test = new SkylineAlg1();
+		list1 = test.getSkyline(list1);
 		list1.displayList();
 
 
