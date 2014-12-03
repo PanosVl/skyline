@@ -4,7 +4,7 @@ public class ListDoublePoints {
 	// και τις μεθόδους της
 
 	// αναφορά στο πρώτο DoublePoint της λίστας
-	private DoublePoint first;
+	DoublePoint first;
 
 	// constructor
 	public ListDoublePoints() {

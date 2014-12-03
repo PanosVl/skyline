@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class MySkylineApp {
+
 	public static void main (String[] args) {
 		
 		// δημιουργία πανομοιότυπων λιστών για τους 2 αλγόριθμους skyline
@@ -9,17 +10,18 @@ public class MySkylineApp {
 
 		// εισαγωγή δοκιμαστικών στοιχείων και στις δύο λίστες
 		list1.insertFirst(1, 9);
+		
 		list1.insertFirst(2,10);
+		
 		list1.insertFirst(4,8);
+		
 		list1.insertFirst(9,2);
 
+		list1.displayList();
+		
 		SkylineAlg1 test = new SkylineAlg1(list1);
 		//list1 = getSkyline();
-		//list1.displayList();
-		
-
-		test();
-
+		list1.displayList();
 
 
 		/*
