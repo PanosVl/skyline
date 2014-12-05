@@ -7,11 +7,13 @@ public class SortList {
 	// και την επιστρέφει ταξινομημένη
 	public static ListDoublePoints getSorted( ListDoublePoints list ) {
 
+		/*
 		// ξεκίνα απο την αρχή της λίστας
 		DoublePoint previous = list.first;
 		DoublePoint current = previous.next;
 		double sumP, sumC;
 		DoublePoint temp;
+		double tempX, tempY;
 
 		while (previous != null)
 		{
@@ -21,9 +23,12 @@ public class SortList {
 				sumP = previous.x + previous.y;
 				if (sumC < sumP)
 				{
-					temp = current;
-					current = previous;
-					previous = temp;
+					tempX = current.x;
+					tempY = current.y;
+					current.x = previous.x;
+					current.y = previous.y;
+					previous.x = tempX;
+					previous.y = tempY;
 					break;
 				}
 				current = current.next;
@@ -31,6 +36,22 @@ public class SortList {
 			previous = previous.next;
 		}
 		return list;
+		*/
+
+		DoublePoint previous = list.first;
+		DoublePoint current = previous.next;
+
+		while (previous!=null)
+		{
+			while (current != null)
+			{
+				while (previous<current)
+				{
+					System.out.println("FUCK YOUUUUUU!");
+				}
+			}
+		}
+		
 	}
 
 }
