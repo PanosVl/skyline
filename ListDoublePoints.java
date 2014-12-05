@@ -69,7 +69,7 @@ public class ListDoublePoints {
 	// εμφανίζει τη λίστα
 	public void displayList() {
 
-		System.out.print("List (first-->last): ");
+		System.out.println("List (first-->last): ");
 
 		// ξεκίνα απο την αρχή της λίστας
 		DoublePoint current = first;

@@ -7,8 +7,7 @@ public class SkylineAlg1 {
 	// επιστρέφει το Skyline για τη δεδομένη λίστα
 	public ListDoublePoints getSkyline( ListDoublePoints list) {
 
-		DoublePoint  previous = list.first; // αρχή της λίστας
-		// DoublePoint previous = first; 
+		DoublePoint  previous = list.first; // αρχή της λίστας 
 		DoublePoint  current = previous.next; // το δεύτερο στοιχείο της λίστας
 
 		// για κάθε σημείο p 
