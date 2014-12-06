@@ -6,8 +6,8 @@ public class SortList {
 	// δέχεται μια συνδεδεμένη λίστα ώς παράμετρο
 	// και την επιστρέφει ταξινομημένη
 	public static ListDoublePoints getSorted( ListDoublePoints list ) {
-
-		/*
+		
+		
 		// ξεκίνα απο την αρχή της λίστας
 		DoublePoint previous = list.first;
 		DoublePoint current = previous.next;
@@ -36,22 +36,6 @@ public class SortList {
 			previous = previous.next;
 		}
 		return list;
-		*/
-
-		DoublePoint previous = list.first;
-		DoublePoint current = previous.next;
-
-		while (previous!=null)
-		{
-			while (current != null)
-			{
-				while (previous<current)
-				{
-					System.out.println("FUCK YOUUUUUU!");
-				}
-			}
-		}
-		
 	}
 
 }

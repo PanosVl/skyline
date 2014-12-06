@@ -47,6 +47,7 @@ public class MySkylineApp {
 
 		list1.insertFirst(10,10);
 
+		System.out.println("===========unSORTED===========");
 		list1.displayList();
 		
 		/*SkylineAlg1 test = new SkylineAlg1();
