@@ -4,19 +4,13 @@ public class ListDoublePoints {
 	// και τις μεθόδους της
 
 	// αναφορά στο πρώτο DoublePoint της λίστας
-	DoublePoint first;
+	public DoublePoint first;
 
 	// constructor
 	public ListDoublePoints() {
 
-		first = null; // δηλώνει οτι δεν υπάρχει (ακόμα) κανένα στοιχείο στη λίστα 
+		first = null; 		// δηλώνει οτι δεν υπάρχει (ακόμα) κανένα στοιχείο στη λίστα 
 
-	}
-	
-	// ελέγχει αν η λίστα είναι άδεια
-	// επιστρέφοντας αντίστοιχη boolean τιμή
-	public boolean isEmpty() {
-		return (first == null);
 	}
 
 	// εισάγει στοιχεία DoublePoint στην αρχή της λίστας

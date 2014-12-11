@@ -8,7 +8,7 @@ public class SortList {
 	public static ListDoublePoints getSorted( ListDoublePoints list ) {
 		
 		
-		// ξεκίνα απο την αρχή της λίστας
+		/*// ξεκίνα απο την αρχή της λίστας
 		DoublePoint previous = list.first;
 		DoublePoint current = previous.next;
 		double sumP, sumC;
@@ -35,7 +35,6 @@ public class SortList {
 			}
 			previous = previous.next;
 		}
-		return list;
+		return list;*/
 	}
-
 }
