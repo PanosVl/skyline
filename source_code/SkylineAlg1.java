@@ -1,54 +1,26 @@
 public class SkylineAlg1 {
 
-		public ListDoublePoints skyline1( ListDoublePoints list ) {
-			DoublePoint  previous = first; // αρχή της λίστας
-			DoublePoint  current = previous.next; // το δεύτερο στοιχείο της λίστας
+	public ListDoublePoints skyline1( ListDoublePoints list ) {
+		DoublePoint  previous = list.first; 			// αρχή της λίστας
+		DoublePoint  current = previous.next; 			// το δεύτερο στοιχείο της λίστας
 
-			// για κάθε σημείο p 
-			while (previous != null) 
-			{
-				
-				// για κάθε σημείο q 
-				while (current != null)  
-				{
-					// έλεγχος Χ
-					if (previous.x <= current.x)
-					{
-						if (previous.x == current.x)
-						{
-							if (previous.y < current.y)
-								// ΚΥΡΙΑΡΧΙΑ p στο q
-								delete(current.x, current.y);
-							else
-							{
-								// ΚΥΡΙΑΡΧΙΑ q στο p
-								delete(previous.x, previous.y);
-								break;
-							}
-						}
-					}
-
-					// έλεγχος y
-					if (previous.y <= current.y)
-					{
-						if (previous.y == current.y)
-						{
-							if (previous.x < current.x)
-								// ΚΥΡΙΑΡΧΙΑ p στο q
-								delete(current.x, current.y);
-							else
-							{
-								// ΚΥΡΙΑΡΧΙΑ q στο p
-								delete(previous.x, previous.y);
-								break;
-							}
-						}
-					}
-					current = current.next;
-					
-				}
-				previous = previous.next;
-			}	
-		}
+		while (previous != null) 
+		{
+           	DoublePoint tempPrevious = previous.next;	// βοηθητική μεταβλητή temp δείχνει previous +1
+      
+           	while (current != null) 
+           	{
+               	DoublePoint tempCurrent = current.next;
+                   if (previous.dominates(current) == true) 
+                       list.delete(current);
+                   else if (current.dominates(previous) == true) 
+                       list.delete(previous);
+	         		current = tempCurrent;				// μετά τις αλλαγές,θέτω τον current στη θέση που πρέπει να είναι (previous.next)
+           	}
+           	current = list.first;
+           	previous = tempPrevious;
+        }
+		return list;
+	}
 	
 }

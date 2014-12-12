@@ -1,4 +1,5 @@
-import java.util.*
+import java.util.*;
+import java.io.*;
 
 public class MySkylineApp {
 	public static void main (String[] args) {
@@ -8,10 +9,18 @@ public class MySkylineApp {
 		// ListDoublePoints list2 = new ListDoublePoints();
 
 		// εισαγωγή δοκιμαστικών στοιχείων και στις δύο λίστες
-		list1.insertFirst(1, 9);
+		list1.insertFirst(1.0, 9);
 		list1.insertFirst(2,10);
 		list1.insertFirst(4,8);
 		list1.insertFirst(9,2);
+		list1.insertFirst(10,1000);
+		System.out.println("Before Skylining");
+		list1.displayList();
+
+		SkylineAlg1 test = new SkylineAlg1();
+		list1 = test.skyline1(list1);
+		System.out.println("After Skylining");
+		list1.displayList();
 		/*
 		list2.insertFirst(1, 9);
 		list2.insertFirst(2,10);

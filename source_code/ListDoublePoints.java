@@ -4,7 +4,7 @@ public class ListDoublePoints {
 	// και τις μεθόδους της
 
 	// αναφορά στο πρώτο DoublePoint της λίστας
-	private DoublePoint first;
+	public DoublePoint first;
 
 	// constructor
 	public ListDoublePoints() {
@@ -36,12 +36,12 @@ public class ListDoublePoints {
 	}
 
 	// διαγράφει το στοιχείο με συντεταγμένες (a, b) απο τη λίστα
-	public DoublePoint delete(double a, double b) {
+	public DoublePoint delete(DoublePoint a) {
 		
 		DoublePoint current = first;
 		DoublePoint previous = first;
 
-		while (current.x != a) 
+		while (current != a) 
 		{
 			if (current.next == null)
 				// έφτασε στο τέλος της λίστας 
@@ -80,6 +80,6 @@ public class ListDoublePoints {
 			current.displayDoublePoint(); // τύπωσε το στοιχείο 
 			current = current.next;		  // βάλε τον current να δείχνει μια θέση μπροστά
 		}
-		System.out.println("");
+		System.out.println();
 	}
 }
