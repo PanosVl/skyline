@@ -1,8 +1,25 @@
 public class SkylineAlg2 {
 
-		// foreach p in list |p|
-		// 	foreach q in list |q| after p
-		//    if p dominates q
-		//       pop q
-		
+	public ListDoublePoints skyline2 (ListDoublePoints list) {
+		DoublePoint previous = list.first;
+		DoublePoint current = previous.next;
+
+		while (previous != null)
+		{
+			DoublePoint tempPrevious = previous.next;			// βοηθητική μεταβλητή για να κρατήσω τη θέση
+			
+			while (current != null)
+			{
+				DoublePoint tempCurrent = current.next;			// βοηθητική μεταβλητή για να κρατήσω τη θέση
+				if (previous.dominates(current))
+					list.delete(current);
+				else if (current.dominates(previous))
+					list.delete(previous);
+				current = tempCurrent;
+			}
+			current = previous.next;
+			previous = tempPrevious;	
+		}
+		return list;
+	}
 }

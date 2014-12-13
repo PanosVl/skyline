@@ -8,12 +8,15 @@ public class SortList {
 	// η μέθοδος ταξινόμησης που χρησιμοποιείται είναι η 
 	// MergeSort μιας και είναι η βέλτιστη μέθδος απο αυτές που 
 	// έχουμε εξετάσει μέχρι στιγμής (BubbleSort, InsertionSort, SelectionSort)
-	public ListDoublePoints getSorted( ListDoublePoints list ) {
+	/*
+    public ListDoublePoints getSorted( ListDoublePoints list ) {
 
 				
 
 	}
+    */
 
+    // υλοποίηση της merge sort για κάθε DoublePoint
 	public DoublePoint mergeSort(DoublePoint test) {
 		if (test == null || test.next == null) {
             return test;
@@ -25,11 +28,13 @@ public class SortList {
             b = b.next.next;
         }
         b = test.next;
-        node.next = null;
+        test.next = null;
         DoublePoint ready =  merge(mergeSort(a), mergeSort(b));
         return ready;
 	}
 
+    // μέθοδος υπεύθυνη για την επανένωση της ListDoublePoint μετά την 
+    // εφαρμογή της mergeSort στα DoublePoint της
 	public DoublePoint merge(DoublePoint a, DoublePoint b) {
 		DoublePoint temp = new DoublePoint();
         DoublePoint head = temp;
@@ -47,7 +52,12 @@ public class SortList {
             }
         }
 
-        c.next = (a == null) ? b : a;
+        // c.next = (a == null) ? b : a;
+        if ( a == null )
+            c.next = b;
+        else 
+            c.next = a;
+        
         return head.next;
 	}
 }

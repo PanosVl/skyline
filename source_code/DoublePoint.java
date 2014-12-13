@@ -10,7 +10,13 @@ public class DoublePoint {
 	public double x;
 	public double y;
 
+	// κενός constructor (παίρνει τυχαίες τιμές)
 	// constructor
+	public DoublePoint () {
+		x = (int) (Math.random() * ((10) + 1));
+		y = (int) (Math.random() * ((10) + 1));
+	}
+
 	public DoublePoint ( double a, double b ) {
 		x = a;
 		y = b;
@@ -26,7 +32,7 @@ public class DoublePoint {
 
 	// μέθοδος για την εφμάνιση του κόμβου λίστας
 	public void displayDoublePoint() {
-		System.out.print("{" + x + ", " + y + "} ");
+		System.out.println("{" + x + ", " + y + "} ");
 	}
 	
 }
