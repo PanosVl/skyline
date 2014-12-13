@@ -10,13 +10,6 @@ public class DoublePoint {
 	public double x;
 	public double y;
 
-	// κενός constructor (παίρνει τυχαίες τιμές)
-	// constructor
-	public DoublePoint () {
-		x = (int) (Math.random() * ((10) + 1));
-		y = (int) (Math.random() * ((10) + 1));
-	}
-
 	public DoublePoint ( double a, double b ) {
 		x = a;
 		y = b;
@@ -24,7 +17,7 @@ public class DoublePoint {
 	}
 
 	public boolean dominates(DoublePoint param) {
-        if ((this.x <= param.x && this.y < param.y) || (this.x < param.x && this.y <= param.y) || (this.x < param.x && this.y < param.y))
+        if ((this.x <= param.x && this.y < param.y) || (this.x < param.x && this.y <= param.y))
             return true;
         else 
        		return false;

@@ -11,11 +11,11 @@ public class SkylineAlg1 {
            	while (current != null) 
            	{
                	DoublePoint tempCurrent = current.next;
-                   if (previous.dominates(current) == true) 
-                       list.delete(current);
-                   else if (current.dominates(previous) == true) 
-                       list.delete(previous);
-	         		current = tempCurrent;				// μετά τις αλλαγές,θέτω τον current στη θέση που πρέπει να είναι (previous.next)
+                if (previous.dominates(current) == true) 
+					list.delete(current);
+                else if (current.dominates(previous) == true) 
+                    list.delete(previous);
+				current = tempCurrent;				// μετά τις αλλαγές,θέτω τον current στη θέση που πρέπει να είναι (previous.next)
            	}
            	current = list.first;
            	previous = tempPrevious;

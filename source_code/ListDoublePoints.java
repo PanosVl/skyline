@@ -13,11 +13,6 @@ public class ListDoublePoints {
 
 	}
 	
-	// ελέγχει αν η λίστα είναι άδεια
-	// επιστρέφοντας αντίστοιχη boolean τιμή
-	public boolean isEmpty() {
-		return (first == null);
-	}
 
 	// εισάγει στοιχεία DoublePoint στην αρχή της λίστας
 	public void insertFirst(double x, double y) {
