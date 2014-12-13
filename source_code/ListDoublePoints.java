@@ -12,7 +12,6 @@ public class ListDoublePoints {
 		first = null; // δηλώνει οτι δεν υπάρχει (ακόμα) κανένα στοιχείο στη λίστα 
 
 	}
-	
 
 	// εισάγει στοιχεία DoublePoint στην αρχή της λίστας
 	public void insertFirst(double x, double y) {
@@ -59,7 +58,6 @@ public class ListDoublePoints {
 
 		return current;
 	}
-
 
 	// εμφανίζει τη λίστα
 	public void displayList() {

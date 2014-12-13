@@ -6,7 +6,7 @@ public class MySkylineApp {
 		
 		// δημιουργία πανομοιότυπων λιστών για τους 2 αλγόριθμους skyline
 		// ListDoublePoints list1 = new ListDoublePoints();
-		// ListDoublePoints list2 = new ListDoublePoints();
+		ListDoublePoints list2 = new ListDoublePoints();
 
 		/*
 		// εισαγωγή δοκιμαστικών στοιχείων και στις δύο λίστες
@@ -28,10 +28,13 @@ public class MySkylineApp {
 		list2.insertFirst(4,8);
 		list2.insertFirst(9,2);
 		list2.insertFirst(10,1000);
-		System.out.println("Before Sorting:");
+		System.out.println("Before Skylining");
 		list2.displayList();
-
-		SortList testSorting = new SortList();
+		
+		SkylineAlg1 test = new SkylineAlg1();
+		list2 = test.skyline1(list2);
+		System.out.println("After Skylining");
+		list2.displayList();
 		
 		
 
