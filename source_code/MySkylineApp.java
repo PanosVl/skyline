@@ -28,12 +28,12 @@ public class MySkylineApp {
 		list2.insertFirst(4,8);
 		list2.insertFirst(9,2);
 		list2.insertFirst(10,1000);
-		System.out.println("Before Skylining");
+		System.out.println("Before sorting");
 		list2.displayList();
 		
-		SkylineAlg1 test = new SkylineAlg1();
-		list2 = test.skyline1(list2);
-		System.out.println("After Skylining");
+		SortList test = new SortList();
+		list2 = test.getSorted(list2);
+		System.out.println("After sorting");
 		list2.displayList();
 		
 		

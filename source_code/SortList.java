@@ -6,7 +6,6 @@ public class SortList {
 	// δέχεται μια συνδεδεμένη λίστα ώς παράμετρο
 	// και την επιστρέφει ταξινομημένη
 	
-	
     public ListDoublePoints getSorted( ListDoublePoints list ) {
 
 		DoublePoint a = list.first;	
