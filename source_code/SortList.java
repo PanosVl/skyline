@@ -12,6 +12,7 @@ public class SortList {
 		DoublePoint a = list.first;	
 		SortList.mergeSort(a);
 		list.setFirst(SortList.mergeSort(a));
+		return list;
 
 	}
 

@@ -1,7 +1,7 @@
 public class SkylineAlg1 {
 
 	public ListDoublePoints skyline1( ListDoublePoints list ) {
-		DoublePoint  previous = list.first; 			// αρχή της λίστας
+	  DoublePoint  previous = list.first; 			// αρχή της λίστας
 		DoublePoint  current = previous.next; 			// το δεύτερο στοιχείο της λίστας
 
 		while (previous != null) 
