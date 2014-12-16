@@ -24,13 +24,6 @@ public class DoublePoint {
 		// η 'next' αρχικοποιείται αυτόματα με την τιμή null
 	}
 
-	public boolean dominates(DoublePoint param) {
-        if ((this.x <= param.x && this.y < param.y) || (this.x < param.x && this.y <= param.y))
-            return true;
-        else 
-       		return false;
-    }
-
 	// μέθοδος για την εφμάνιση του κόμβου λίστας
 	public void displayDoublePoint() {
 		System.out.println("{" + x + ", " + y + "} ");
