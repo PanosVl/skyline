@@ -5,16 +5,35 @@ public class SortList {
 
 	// δέχεται μια συνδεδεμένη λίστα ώς παράμετρο
 	// και την επιστρέφει ταξινομημένη
-	
-    public ListDoublePoints getSorted( ListDoublePoints list ) {
+	// την έκανα static για να μπορεί να κληθεί χωρίς δημιουργία αντικειμένου
+    public static ListDoublePoints getSorted( ListDoublePoints list ) {
 
-		DoublePoint a = list.first;	
-		SortList.mergeSort(a);
-		list.setFirst(SortList.mergeSort(a));
+		DoublePoint current = list.first;
+        DoublePoint previous = current.next;
+        while (previous != null)
+        {
+            current = list.first;
+            while (current != null)
+            {
+                if ((previous.x + previous.y) > (current.x + current.y))
+                {
+                    double tempX = previous.x;
+                    double tempY = previous.y;
+                    previous.x = current.x;
+                    previous.y = current.y;
+                    current.x = tempX;
+                    current.y = tempY;
+                }
+                current = current.next;
+            }
+            previous = previous.next;
+        }
 		return list;
 
 	}
-
+    /* //-----------------------------------------------------------------------
+       //ΕΔΩ ΕΚΑΝΑ ΜΙΑ ΠΡΟΣΠΑΘΕΙΑ ΝΑ ΥΛΟΠΟΙΗΣΩ ΤΗ MergeSort ΧΩΡΙΣ ΝΑ ΤΑ ΚΑΤΑΦΕΡΩ
+       //----------------ΟΠΟΤΕ ΓΥΡΙΣΑ ΣΤΗ BubbleSort ΑΝΑΓΚΑΣΤΙΚΑ----------------
 	public static DoublePoint mergeSort(DoublePoint node) {
         if (node == null || node.next == null) {
             return node;
@@ -50,4 +69,5 @@ public class SortList {
         c.next = (a == null) ? b : a;
         return head.next;
     }
+    */
 }

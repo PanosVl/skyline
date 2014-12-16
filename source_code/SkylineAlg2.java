@@ -1,25 +1,32 @@
 public class SkylineAlg2 {
 
-	public ListDoublePoints skyline2 (ListDoublePoints list) {
-		DoublePoint previous = list.first;
-		DoublePoint current = previous.next;
+	private static int counter = 0;
+
+	public static ListDoublePoints skyline2( ListDoublePoints list ) {
+
+		list = SortList.getSorted(list);
+
+		DoublePoint current = list.first;
+		DoublePoint previous = current.next;
 
 		while (previous != null)
 		{
-			DoublePoint tempPrevious = previous.next;			// βοηθητική μεταβλητή για να κρατήσω τη θέση
-			
+			current = list.first;
 			while (current != null)
 			{
-				DoublePoint tempCurrent = current.next;			// βοηθητική μεταβλητή για να κρατήσω τη θέση
-				if (previous.dominates(current))
+				counter++;
+				if ((current.x > previous.x && current.y >= previous.y) || (current.x >= previous.x && current.y > previous.y))
+				{
 					list.delete(current);
-				else if (current.dominates(previous))
-					list.delete(previous);
-				current = tempCurrent;
+				}
+				current = current.next;
 			}
-			current = previous.next;
-			previous = tempPrevious;	
+			previous = previous.next;
 		}
 		return list;
+	}
+
+	public static int getCost() {
+		return counter;
 	}
 }

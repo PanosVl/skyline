@@ -79,4 +79,16 @@ public class ListDoublePoints {
 	public void setFirst (DoublePoint a) {
 		first = a;
 	}
+
+	// επιστρέφει το πλήθος στοιχείων που υπάρχουν στη λίστα
+	public int numberOfElements() {
+		int counter = 0;
+		DoublePoint current = first;
+		while (current != null)
+		{
+			counter++;
+			current = current.next;
+		}
+		return counter;
+	}
 }

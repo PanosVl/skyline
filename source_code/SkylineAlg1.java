@@ -1,30 +1,37 @@
 public class SkylineAlg1 {
 
-	public ListDoublePoints skyline1( ListDoublePoints list ) {
-	  DoublePoint  previous = list.first; 			// αρχή της λίστας
-		DoublePoint  current = previous.next; 			// το δεύτερο στοιχείο της λίστας
+  private static int counter = 0;            // αριθμός συγκρίσεων
+
+	public static ListDoublePoints skyline1( ListDoublePoints list ) {
+	  DoublePoint  current = list.first; 			// αρχή της λίστας
+		DoublePoint  previous = current.next; 		// το δεύτερο στοιχείο της λίστας
 
 		while (previous != null) 
 		{
-          	DoublePoint tempPrevious = previous.next;	// βοηθητική μεταβλητή temp δείχνει previous +1
+          	current = list.first;	
            	while (current != null) 
            	{
-               	DoublePoint tempCurrent = current.next;
-                if ((previous.x <= current.x && previous.y < current.y) || (previous.x < current.x && previous.y <= current.y) || (previous.x < current.x && previous.y <current.y))
+               	counter++;
+
+                if ((current.x > previous.x && current.y >= previous.y) || (current.x >= previous.x && current.y > previous.y))
                 {
 					list.delete(current);
 				}
-                else
+                counter++;
+                if ((current.x < previous.x && current.y <= previous.y) || (current.x <= previous.x && current.y < previous.y))
                 {
                     list.delete(previous);
                     break;
                 }
-                current = tempCurrent;
+                current = current.next;
            	}
-           	current = list.first;
-           	previous = tempPrevious;
+           	previous = previous.next;
         }
 		return list;
 	}
+
+    public static int getCost() {
+        return counter;
+    }
 	
 }
