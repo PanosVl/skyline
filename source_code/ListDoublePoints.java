@@ -12,12 +12,6 @@ public class ListDoublePoints {
 		first = null; // δηλώνει οτι δεν υπάρχει (ακόμα) κανένα στοιχείο στη λίστα 
 
 	}
-	
-	// ελέγχει αν η λίστα είναι άδεια
-	// επιστρέφοντας αντίστοιχη boolean τιμή
-	public boolean isEmpty() {
-		return (first == null);
-	}
 
 	// εισάγει στοιχεία DoublePoint στην αρχή της λίστας
 	public void insertFirst(double x, double y) {
@@ -65,11 +59,10 @@ public class ListDoublePoints {
 		return current;
 	}
 
-
 	// εμφανίζει τη λίστα
 	public void displayList() {
 
-		System.out.print("List (first-->last): ");
+		System.out.println("List (first-->last): ");
 
 		// ξεκίνα απο την αρχή της λίστας
 		DoublePoint current = first;
@@ -81,5 +74,21 @@ public class ListDoublePoints {
 			current = current.next;		  // βάλε τον current να δείχνει μια θέση μπροστά
 		}
 		System.out.println();
+	}
+
+	public void setFirst (DoublePoint a) {
+		first = a;
+	}
+
+	// επιστρέφει το πλήθος στοιχείων που υπάρχουν στη λίστα
+	public int numberOfElements() {
+		int counter = 0;
+		DoublePoint current = first;
+		while (current != null)
+		{
+			counter++;
+			current = current.next;
+		}
+		return counter;
 	}
 }
